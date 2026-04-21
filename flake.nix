@@ -21,8 +21,8 @@
       packages = forAllSystems (system: rec {
         default = firmware;
 
-        firmware = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
-          name = "firmware";
+        reset = zmk-nix.legacyPackages.${system}.buildKeyboard {
+          name = "settings_reset";
 
           src = nixpkgs.lib.sourceFilesBySuffices self [
             ".board"
@@ -39,17 +39,43 @@
             "_defconfig"
           ];
 
-          board = "nice_nano@2.0.0";
-          shield = "caldera_%PART%";
+          board = "nice_nano@2.0.0//zmk";
+          shield = "settings_reset";
 
-          extraCmakeFlags = [
-            "-DCONFIG_ZMK_SETTINGS_RESET_ON_START=y"
-          ];
-
-          zephyrDepsHash = "sha256-yZd+C2k9Kb1TKzXS6rR3/Jcs3UAGeKmq0YwdylODRgs=";
+          zephyrDepsHash = "sha256-13db6bDxuRDkXAGhSKx2Q/Lm9q7xfDs1kwER0PNJMVs=";
 
           meta = {
-            description = "ZMK firmware";
+            description = "ZMK firmware for resetting keyboard";
+            license = nixpkgs.lib.licenses.mit;
+            platforms = nixpkgs.lib.platforms.all;
+          };
+        };
+
+        firmware = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
+          name = "caldera";
+
+          src = nixpkgs.lib.sourceFilesBySuffices self [
+            ".board"
+            ".cmake"
+            ".conf"
+            ".defconfig"
+            ".dts"
+            ".dtsi"
+            ".json"
+            ".keymap"
+            ".overlay"
+            ".shield"
+            ".yml"
+            "_defconfig"
+          ];
+
+          board = "nice_nano@2.0.0//zmk";
+          shield = "caldera_%PART%";
+
+          zephyrDepsHash = "sha256-13db6bDxuRDkXAGhSKx2Q/Lm9q7xfDs1kwER0PNJMVs=";
+
+          meta = {
+            description = "ZMK firmware for Caldera keyboard";
             license = nixpkgs.lib.licenses.mit;
             platforms = nixpkgs.lib.platforms.all;
           };

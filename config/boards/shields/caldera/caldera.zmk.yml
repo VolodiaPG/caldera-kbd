@@ -1,0 +1,13 @@
+file_format: "1"
+id: caldera
+name: Caldera
+type: shield
+url: https://github.com/volodiapg/caldera-kbd
+requires: [pro_micro]
+exposes: []
+features:
+  - keys
+  # - studio
+siblings:
+  - caldera_left
+  - caldera_right

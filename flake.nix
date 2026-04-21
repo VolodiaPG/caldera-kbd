@@ -46,7 +46,7 @@
             "-DCONFIG_ZMK_SETTINGS_RESET_ON_START=y"
           ];
 
-          zephyrDepsHash = "sha256-DOz+hpthxe7jyzZouYpe/aFy9RQgTFnIp+HUMmz3v50=";
+          zephyrDepsHash = "sha256-yZd+C2k9Kb1TKzXS6rR3/Jcs3UAGeKmq0YwdylODRgs=";
 
           meta = {
             description = "ZMK firmware";

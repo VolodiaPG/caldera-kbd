@@ -42,7 +42,7 @@
           board = "nice_nano@2.0.0//zmk";
           shield = "settings_reset";
 
-          zephyrDepsHash = "sha256-13db6bDxuRDkXAGhSKx2Q/Lm9q7xfDs1kwER0PNJMVs=";
+          zephyrDepsHash = "sha256-Y+QtAFAsJ4KPFysMesykbqR6kb63uvWRmLeMC5ZkjKs=";
 
           meta = {
             description = "ZMK firmware for resetting keyboard";
@@ -72,7 +72,9 @@
           board = "nice_nano@2.0.0//zmk";
           shield = "caldera_%PART%";
 
-          zephyrDepsHash = "sha256-13db6bDxuRDkXAGhSKx2Q/Lm9q7xfDs1kwER0PNJMVs=";
+          zephyrDepsHash = "sha256-Y+QtAFAsJ4KPFysMesykbqR6kb63uvWRmLeMC5ZkjKs=";
+
+          enableZmkStudio = true;
 
           meta = {
             description = "ZMK firmware for Caldera keyboard";
